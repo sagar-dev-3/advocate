@@ -1,0 +1,135 @@
+/* ================================================================
+   RAVINDRA PRASAD – Responsive CSS
+   Breakpoints: 1280, 1024, 768, 480, 375px
+   ================================================================ */
+
+/* ── 1280px ───────────────────────────────────────────────────── */
+@media (max-width: 1280px) {
+    .hero-inner { grid-template-columns: 1fr 360px; gap: 60px; }
+    .stats-grid { grid-template-columns: repeat(5, 1fr); }
+    .footer-grid { gap: 40px; }
+}
+
+/* ── 1024px (Tablet) ──────────────────────────────────────────── */
+@media (max-width: 1024px) {
+    .header-inner { padding: 0 20px; }
+    .header-nav { display: none; }
+    .hamburger { display: flex; }
+
+    .hero-inner {
+        grid-template-columns: 1fr;
+        gap: 48px;
+        padding: 80px 0 60px;
+        text-align: center;
+    }
+    .hero-label { justify-content: center; }
+    .hero-desc { margin: 0 auto 40px; }
+    .hero-actions { justify-content: center; }
+    .hero-logo-card { max-width: 400px; margin: 0 auto; }
+
+    .stats-grid { grid-template-columns: repeat(3, 1fr); gap: 0; }
+    .stat-item:nth-child(3) { border-right: none; }
+
+    .about-grid { grid-template-columns: 1fr; gap: 40px; }
+    .about-logo-box { position: static; max-width: 400px; margin: 0 auto; }
+
+    .grid-3 { grid-template-columns: 1fr 1fr; }
+    .why-grid { grid-template-columns: 1fr 1fr; }
+
+    .contact-grid { grid-template-columns: 1fr; gap: 40px; }
+    .contact-card { position: static; }
+
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+    .footer-brand { grid-column: 1 / -1; }
+
+    .exp-hero-banner { padding: 40px 32px; }
+}
+
+/* ── 768px (Tablet portrait) ──────────────────────────────────── */
+@media (max-width: 768px) {
+    .section { padding: 64px 0; }
+
+    .stats-grid { grid-template-columns: repeat(2, 1fr); }
+    .stat-item:nth-child(2) { border-right: none; }
+    .stat-item:nth-child(3) { border-right: 1px solid rgba(7,26,45,0.15); }
+    .stat-item:last-child { border-right: none; }
+
+    .grid-2 { grid-template-columns: 1fr; }
+    .grid-3 { grid-template-columns: 1fr; }
+    .grid-4 { grid-template-columns: 1fr 1fr; }
+    .why-grid { grid-template-columns: 1fr; }
+
+    .service-card { grid-template-columns: 1fr; text-align: center; }
+    .service-icon { margin: 0 auto; }
+
+    .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+    .footer-brand { grid-column: auto; }
+
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+    }
+    .footer-legal { text-align: center; }
+
+    .page-hero h1 { font-size: 2rem; }
+
+    .contact-actions .btn { font-size: 0.82rem; padding: 12px 20px; }
+    .map-wrapper iframe { height: 360px; }
+}
+
+/* ── 480px (Mobile) ───────────────────────────────────────────── */
+@media (max-width: 480px) {
+    html { font-size: 15px; }
+
+    .container { padding: 0 16px; }
+
+    .header-inner { height: 66px; padding: 0 16px; }
+    .header-logo img { height: 44px; }
+    .page-top { padding-top: 66px; }
+
+    #hero { min-height: auto; }
+    .hero-inner { padding: 60px 0 48px; }
+    .hero-actions { flex-direction: column; align-items: center; }
+    .hero-actions .btn { width: 100%; justify-content: center; }
+
+    .stats-grid { grid-template-columns: 1fr 1fr; }
+    .stat-item { border-right: none !important; border-bottom: 1px solid rgba(7,26,45,0.12); }
+    .stat-item:nth-last-child(-n+2) { border-bottom: none; }
+
+    .grid-4 { grid-template-columns: 1fr; }
+
+    .btn { padding: 12px 20px; font-size: 0.82rem; }
+
+    #float-wa { bottom: 16px; right: 16px; }
+    .float-wa-btn { width: 52px; height: 52px; font-size: 1.4rem; }
+    .float-wa-btn::before { width: 52px; height: 52px; }
+
+    .exp-hero-banner { padding: 32px 20px; }
+    .exp-number { font-size: 5rem; }
+
+    .section-header { margin-bottom: 40px; }
+
+    .map-wrapper iframe { height: 280px; }
+}
+
+/* ── 375px (Small Mobile) ─────────────────────────────────────── */
+@media (max-width: 375px) {
+    html { font-size: 14px; }
+
+    .header-logo-text { display: none; }
+    .hero-name { font-size: 2.2rem; }
+    .stat-value { font-size: 2rem; }
+
+    .footer-contact-item { flex-wrap: wrap; }
+}
+
+/* ── Prevent horizontal scroll ─────────────────────────────────── */
+body, .hero-inner, .header-inner, .container, .footer-grid { max-width: 100%; }
+body { overflow-x: hidden; }
+
+/* ── Print ─────────────────────────────────────────────────────── */
+@media print {
+    #site-header, #float-wa, .mobile-nav { display: none !important; }
+    .page-top { padding-top: 0; }
+    body { background: white; color: black; }
+}
